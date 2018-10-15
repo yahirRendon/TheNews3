@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <!--Display Article Title-->
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLight"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="2"
+        android:padding="@dimen/medium"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/large_text"
+        tools:text="@string/temp_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLight"
+        android:orientation="horizontal">
+
+        <!--Display Category-->
+        <TextView
+            android:id="@+id/category_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="left"
+            android:maxLines="1"
+            android:padding="@dimen/small"
+            android:textAllCaps="true"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/small_text"
+            tools:text="@string/temp_category" />
+
+        <!--Display Author -->
+        <TextView
+            android:id="@+id/author_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/small"
+            android:textSize="@dimen/small_text"
+            tools:text="@string/temp_author" />
+
+        <!--Display Date-->
+        <TextView
+            android:id="@+id/date_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="@dimen/small"
+            android:textSize="@dimen/small_text"
+            tools:text="@string/temp_date" />
+
+    </LinearLayout>
+
+</LinearLayout>
