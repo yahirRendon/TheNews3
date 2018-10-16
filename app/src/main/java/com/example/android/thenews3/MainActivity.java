@@ -27,12 +27,8 @@ public class MainActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<News>> {
 
     private static final String LOG_TAG = MainActivity.class.getName();
-
-    /**
-     * URL for news articles from the Guardian
-     * API to be added @Loader
-     */
-    private static final String GUARDIAN_URL =
+    //Guardian API request. Key added later.
+    private static final String GUARDIAN_REQUEST_URL =
             "https://content.guardianapis.com/search";
     private static final int NEWS_LOADER_ID = 1;
     private NewsAdapter mAdapter;
@@ -43,16 +39,10 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Find a reference to the {@link ListView} in the layout
         ListView newsListView = findViewById(R.id.list);
-
-        // Create a new adapter that takes an empty list of news as input
         mAdapter = new NewsAdapter(this, new ArrayList<News>());
-
         mEmptyStateTextView = findViewById(R.id.empty_view);
         newsListView.setEmptyView(mEmptyStateTextView);
-        // Set the adapter on the {@link ListView}
-        // so the list can be populated in the user interface
         newsListView.setAdapter(mAdapter);
 
         // Set an item click listener on the ListView, which sends an intent
@@ -113,8 +103,8 @@ public class MainActivity extends AppCompatActivity
                 getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default));
 
-        // parse breaks apart the URI string that's passed into its parameter
-        Uri baseUri = Uri.parse(GUARDIAN_URL);
+        // Subdivide the URI string that's passed into its parameter
+        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
         // buildUpon prepares the baseUri in order to add parsed uri so we can add query parameters
         Uri.Builder uriBuilder = baseUri.buildUpon();
         // Append query parameter and its value.

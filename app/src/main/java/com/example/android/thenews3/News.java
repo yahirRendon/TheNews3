@@ -10,24 +10,24 @@ package com.example.android.thenews3;
 public class News {
 
     /**
-     * News Title
-     */
-    private String mTitle;
-
-    /**
      * News Category
      */
     private String mCategoryName;
 
     /**
-     * News Author
+     * News Title
      */
-    private String mAuthor;
+    private String mTitle;
 
     /**
      * News report date
      */
     private String mDate;
+
+    /**
+     * News Author
+     */
+    private String mAuthor;
 
     /**
      * News URL

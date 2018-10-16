@@ -5,6 +5,8 @@ import android.content.AsyncTaskLoader;
 import java.util.List;
 
 /**
+ * For async task loader
+ *
  * Created by yahir on 10/15/2018.
  */
 
@@ -31,9 +33,6 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
         forceLoad();
     }
 
-    /**
-     * This is on a background thread.
-     */
     @Override
     public List<News> loadInBackground() {
         if (mUrl == null) {

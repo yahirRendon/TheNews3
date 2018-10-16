@@ -47,10 +47,11 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Find the TextView in the list_item.xml layout with the author_textview.
         TextView authorView = (TextView) listItemView.findViewById(R.id.author_textview);
         if (currentNews.getAuthor() != null) {
-            // Display the author of the current News in that TextView
-            authorView.setText(currentNews.getAuthor());
+            // Display the author of the current News in author_textview.
+            authorView.setText(R.string.by_author_text);
+            authorView.append(currentNews.getAuthor());
         } else {
-            // Hide author TextView
+            // Hide author_textview if no author
             authorView.setVisibility(View.INVISIBLE);
         }
 

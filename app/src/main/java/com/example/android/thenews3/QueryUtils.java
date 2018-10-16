@@ -26,10 +26,11 @@ import java.util.Locale;
 /**
  * Helper methods for requesting and receiving news data from Guardian API.
  *
- * Created by yahir on 10/145/2018.
+ * Created by yahir on 10/14/2018.
  */
 public final class QueryUtils {
-
+    public static final int MAX_READ_TIMEOUT = 10000; // milliseconds
+    public static final int MAX_CONNECTION_TIMEOUT = 15000; // milliseconds
     /**
      * Tag for the log messages
      */
@@ -93,8 +94,8 @@ public final class QueryUtils {
         InputStream inputStream = null;
         try {
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(10000 /* milliseconds */);
-            urlConnection.setConnectTimeout(15000 /* milliseconds */);
+            urlConnection.setReadTimeout(MAX_READ_TIMEOUT);
+            urlConnection.setConnectTimeout(MAX_CONNECTION_TIMEOUT);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
